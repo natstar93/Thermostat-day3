@@ -4,6 +4,9 @@ var Thermostat = function() {
 };
 
 Thermostat.prototype.increase = function () {
+  if (this.temperature >= 25 && this.powerSave === true) {
+    return 'reached maximum temperature';
+  }
   (this.temperature = this.temperature + 1)
 };
 
