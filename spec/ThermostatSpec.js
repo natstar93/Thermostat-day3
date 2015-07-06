@@ -36,6 +36,12 @@ describe('Thermostat', function() {
       thermostat = new Thermostat();
       expect(thermostat.powerSave).toEqual(true);
     });
+
+    it('can be turned off', function() {
+      thermostat = new Thermostat();
+      thermostat.powerSaveOff();
+      expect(thermostat.powerSave).toEqual(false);
+    });
   });
 
   // describe('cannot increase if', function() {
