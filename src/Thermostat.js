@@ -7,5 +7,8 @@ Thermostat.prototype.increase = function () {
 };
 
 Thermostat.prototype.decrease = function () {
+  if (this.temperature <= 10) {
+    return "reached minimum temperature"
+  }
   this.temperature = this.temperature - 1;
 };
