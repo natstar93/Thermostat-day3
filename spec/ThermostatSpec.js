@@ -31,11 +31,18 @@ describe('Thermostat', function() {
     });
   });
 
-  describe('cannot increase if', function() {
-    it('temperature is >= 25º when power save is on', function() {
+  describe('power saving mode,', function() {
+    it('defaults to on', function() {
       thermostat = new Thermostat();
-      thermostat.temperature = 25;
-      expect(thermostat.increase()).toEqual('reached maximum temperature');
+      expect(thermostat.powerSave).toEqual(true)
     });
   });
+
+  // describe('cannot increase if', function() {
+  //   it('temperature is >= 25º when power save is on', function() {
+  //     thermostat = new Thermostat();
+  //     thermostat.temperature = 25;
+  //     expect(thermostat.increase()).toEqual('reached maximum temperature');
+  //   });
+  // });
 });
