@@ -64,4 +64,13 @@ describe('Thermostat', function() {
       expect(thermostat.increase()).toEqual('reached maximum temperature');
     });
   });
+
+  describe('reset the temperature', function() {
+    it('changes the temperature to 20', function() {
+      thermostat = new Thermostat();
+      thermostat.increase();
+      thermostat.resetTemperature();
+      expect(thermostat.temperature).toEqual(20);
+    });
+  });
 });
