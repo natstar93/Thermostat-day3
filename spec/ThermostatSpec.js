@@ -56,5 +56,12 @@ describe('Thermostat', function() {
       thermostat.temperature = 25;
       expect(thermostat.increase()).toEqual('reached maximum temperature');
     });
+
+    it('off, the max temperature is 32ºC', function() {
+      thermostat = new Thermostat();
+      thermostat.powerSaveOff();
+      thermostat.temperature = 32;
+      expect(thermostat.increase()).toEqual('reached maximum temperature');
+    });
   });
 });
