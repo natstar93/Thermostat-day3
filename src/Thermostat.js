@@ -13,3 +13,7 @@ Thermostat.prototype.decrease = function () {
   }
   this.temperature = this.temperature - 1;
 };
+
+Thermostat.prototype.powerSaveOff = function () {
+  this.powerSave = false;
+};
