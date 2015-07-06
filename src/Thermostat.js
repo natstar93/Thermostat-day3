@@ -17,3 +17,7 @@ Thermostat.prototype.decrease = function () {
 Thermostat.prototype.powerSaveOff = function () {
   this.powerSave = false;
 };
+
+Thermostat.prototype.powerSaveOn = function () {
+  this.powerSave = true;
+};
