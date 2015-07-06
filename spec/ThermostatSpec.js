@@ -16,7 +16,7 @@ describe('Thermostat', function() {
   });
 
   describe('decreases', function() {
-    it('the temperature by 1º', function() {
+    it('the temperature by 1ºC', function() {
       thermostat = new Thermostat();
       thermostat.decrease();
       expect(thermostat.temperature).toEqual(19);
@@ -24,7 +24,7 @@ describe('Thermostat', function() {
   });
 
   describe('cannot decrease if', function() {
-    it('temperature is <= 10º', function() {
+    it('temperature is <= 10ºC', function() {
       thermostat = new Thermostat();
       thermostat.temperature = 10;
       expect(thermostat.decrease()).toEqual('reached minimum temperature');
@@ -50,11 +50,11 @@ describe('Thermostat', function() {
     });
   });
 
-  // describe('cannot increase if', function() {
-  //   it('temperature is >= 25º when power save is on', function() {
-  //     thermostat = new Thermostat();
-  //     thermostat.temperature = 25;
-  //     expect(thermostat.increase()).toEqual('reached maximum temperature');
-  //   });
-  // });
+  describe('when power save is', function() {
+    it('on, the max temperature is 25ºC', function() {
+      thermostat = new Thermostat();
+      thermostat.temperature = 25;
+      expect(thermostat.increase()).toEqual('reached maximum temperature');
+    });
+  });
 });
