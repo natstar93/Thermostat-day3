@@ -1,5 +1,3 @@
-var Thermostat = function() {};
-
-Thermostat.prototype.temperature = function () {
-  return 20;
+var Thermostat = function() {
+  this.temperature = 20;
 };
