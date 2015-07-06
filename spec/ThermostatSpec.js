@@ -34,7 +34,7 @@ describe('Thermostat', function() {
   describe('power saving mode,', function() {
     it('defaults to on', function() {
       thermostat = new Thermostat();
-      expect(thermostat.powerSave).toEqual(true)
+      expect(thermostat.powerSave).toEqual(true);
     });
   });
 
