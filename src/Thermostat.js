@@ -7,6 +7,9 @@ Thermostat.prototype.increase = function () {
   if (this.temperature >= 25 && this.powerSave === true) {
     return 'reached maximum temperature';
   }
+  if (this.temperature >= 32 && this.powerSave === false) {
+    return 'reached maximum temperature';
+  }
   (this.temperature = this.temperature + 1)
 };
 
