@@ -70,29 +70,29 @@ describe('Thermostat', function() {
     });
   });
 
-  describe('it assigns a color-value', function() {
-    it('green when less than 18', function() {
-      thermostat.temperature = 17;
-      expect(thermostat.changeColor()).toEqual('green');
-    });
-
-      it('red when more than 25', function() {
-      thermostat.temperature = 26;
-      expect(thermostat.changeColor()).toEqual('red');
-    });
-  });
-
   // describe('it assigns a color-value', function() {
-  //   function test_eight_times( temperature){
-  //     temperature;
-  //     it('green when temperature is less than 18',function(){
-  //       expect(thermostat.color).toEqual('green');
-  //     });
-  //   };
+  //   it('green when less than 18', function() {
+  //     thermostat.temperature = 17;
+  //     expect(thermostat.changeColor()).toEqual('green');
+  //   });
 
-  //    for(var i = 18; i < 10; i--) {
-  //     test_eight_times(thermostat.temperature = i);
-  //   }
+  //     it('red when more than 25', function() {
+  //     thermostat.temperature = 26;
+  //     expect(thermostat.changeColor()).toEqual('red');
+  //   });
   // });
+
+  describe('it assigns a color-value', function() {
+    function test_eight_times(temperature){
+      temperature;
+      it('green when temperature is less than 18',function(){
+        expect(thermostat.color).toEqual('green');
+      });
+    };
+
+    for(var i = 18; i < 10; i--) {
+      test_eight_times(thermostat.temperature = i);
+    }
+  });
 
 });

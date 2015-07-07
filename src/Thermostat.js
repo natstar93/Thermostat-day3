@@ -1,7 +1,7 @@
 var Thermostat = function() {
   this.temperature = 20;
   this.powerSave = true;
-  this.color = 'yellow';
+  this.color = this.changeColor();
 
 };
 
