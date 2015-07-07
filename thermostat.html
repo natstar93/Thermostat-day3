@@ -11,9 +11,19 @@
   <body>
 
     <h1>Welcome to Thermostat</h1>
+<<<<<<< HEAD
     <p id="temperature"></p>
     <button id="up"   type="button" onclick="increase">up</button>
     <button id="down" type="button">down</button>
+=======
+    <div>
+    <font id="temperature" color="getColor();"></font></div><br>
+    <button  onclick="increaseTemperature();">up</button>
+    <button  onclick="decreaseTemperature();">down</button>
+    <input type="checkbox" onclick="changePowerState();" checked>
+    Turn Power Save ON/OFF</br>
+    <button onclick="restartThermostat();">reset</button>
+>>>>>>> db087af6d0abfd89222b5b233fe1d7499da6eb25
     <script src="src/thermoController.js"></script>
   </body>
 </html>
