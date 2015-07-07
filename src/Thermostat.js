@@ -1,21 +1,23 @@
 var Thermostat = function() {
   this.temperature = 20;
   this.powerSave = true;
+  this.color = 'yellow';
+
 };
 
 Thermostat.prototype.increase = function () {
   if (this.temperature >= 25 && this.powerSave === true) {
-    return 'reached maximum temperature';
-  }
+    return this.temperature = 25 ;
+  };
   if (this.temperature >= 32 && this.powerSave === false) {
-    return 'reached maximum temperature';
-  }
+    return this.temperature = 32 ;
+  };
   (this.temperature = this.temperature + 1)
 };
 
 Thermostat.prototype.decrease = function () {
   if (this.temperature <= 10) {
-    return "reached minimum temperature"
+    return this.temperature = 10 ;
   }
   this.temperature = this.temperature - 1;
 };
@@ -31,3 +33,21 @@ Thermostat.prototype.powerSaveOn = function () {
 Thermostat.prototype.resetTemperature = function () {
   this.temperature = 20;
 };
+
+Thermostat.prototype.changeColor = function () {
+    if (this.temperature < 18) {
+      return 'green';
+    }
+    else if (this.temperature < 25) {
+      return 'yellow';
+    }
+    else {
+      return 'red';
+    };
+
+};
+
+// Thermostat.prototype.color = function() {
+//   if (this.temperature <= 18);
+//     return 'green';
+// };
