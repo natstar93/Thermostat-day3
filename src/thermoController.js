@@ -1,28 +1,18 @@
 var thermostat = new Thermostat;
 
+showTemperature();
 
-document.getElementById("temperature").innerHTML= (thermostat.temperature);
-
-function showtemp() {
-  return thermostat.temperature;
-};
-function increase() {
-  document.getElementById("up") = thermostat.increase();
-  return showtemp();
-};
-
-document.getElementById("temperature").innerHTML = (thermostat.temperature);
-
-function increaseTemperature() {
+document.getElementById("up").onclick = function() {
   thermostat.increase();
   showTemperature();
 };
 
-function decreaseTemperature(){
+document.getElementById("down").onclick = function(){
   thermostat.decrease();
   showTemperature();
 };
-function changePowerState() {
+
+document.getElementById("powersave").onclick = function() {
   if (thermostat.powerSave === true) {
     thermostat.powerSaveOff();
   }
@@ -31,16 +21,16 @@ function changePowerState() {
   };
 };
 
-function restartThermostat() {
+document.getElementById("reset").onclick = function() {
   thermostat.resetTemperature();
   showTemperature();
 };
 
 function showTemperature() { 
   document.getElementById("temperature").innerHTML = (thermostat.temperature);
+  document.getElementById("temperature").style.color = thermostat.changeColor();
+    
 }
 
-function getColor() {
-  changeColor();
-}
+ 
 
