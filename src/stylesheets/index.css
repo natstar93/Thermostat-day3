@@ -1,20 +1,47 @@
 
 body {
-  background-color: #66CCFF;
-
+  background-color: #FFFFFF;
 }
+
+img {
+  padding: 5px;
+}
+
 .container {
   margin: auto;
   width: 50%;
-  border: 5px solid red;
+  padding: 15px;
+  text-align: center;
+  background-color: #D0DBF2;
+  color:#4E4256;
+  font-family: Verdana;
+}
+
+.cool {
+  color: green;
+}
+.warm {
+  color: yellow;
+}
+.hot {
+  color: red;
 }
 
 #temperature {
-  font-size: 40px;
+  font-size: 5em;
   font-weight: bolder;
   text-align: center;
-}
-#up {
-
+  margin: 10px;
 }
 
+.buttons {
+  padding: 10px;
+}
+
+.weather {
+  margin: 10px;
+}
+
+#current {
+  font-size: 1.3em;
+}

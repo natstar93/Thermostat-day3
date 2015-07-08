@@ -1,13 +1,9 @@
 $(document).ready(function() {
   
-  $('#temperature').hover(function() {
-    $(this).css('font-size', '100px')
-  });
-  
   $.ajax({url: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric", success: function(result){
-            $("#currentTemp").html(result.main.temp + '°C');
-            $("#city").html(result.name);
-        }});
+    $("#currentTemp").html(result.main.temp + '°C');
+    $("#city").html(result.name);
+  }});
  
 
   $('#cities').change(function(){
@@ -17,13 +13,14 @@ $(document).ready(function() {
   	// Extract the temperature and name from the data
   	// Change the HTML of the currentTemp element
     $.ajax({url: link, success: function(result){
-    $("#city").html(result.list[0].name);
+      $("#city").html(result.list[0].name);
       $("#currentTemp").html(result.list[0].main.temp + '°C');
     }
     });
 
   });
-
-
+  
 });
+  
+ 
 

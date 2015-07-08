@@ -1,11 +1,11 @@
- $(document).ready(function() {
+$(document).ready(function() {
   
   var thermostat = new Thermostat;
   showTemperature();
 
   function showTemperature() { 
-    $("#temperature").html(thermostat.temperature);
-    $("#temperature").css("color", thermostat.changeColor());  
+    $("#temperature").html(thermostat.temperature)
+    $("#temperature").removeClass('cool warm hot').addClass(thermostat.changeColor());  
   }
 
   $("#up").click(function() {
@@ -19,12 +19,7 @@
   });
 
   $("#powersave").click(function() {
-    if (thermostat.powerSave === true) {
-      thermostat.powerSaveOff();
-    }
-    else {
-      thermostat.powerSaveOn();
-    };
+    thermostat.powerSaveToggle();
   });
   
   $("#reset").click(function() {
