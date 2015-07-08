@@ -1,36 +1,37 @@
-var thermostat = new Thermostat;
-
-showTemperature();
-
-document.getElementById("up").onclick = function() {
-  thermostat.increase();
+ $(document).ready(function() {
+  
+  var thermostat = new Thermostat;
   showTemperature();
-};
 
-document.getElementById("down").onclick = function(){
-  thermostat.decrease();
-  showTemperature();
-};
-
-document.getElementById("powersave").onclick = function() {
-  if (thermostat.powerSave === true) {
-    thermostat.powerSaveOff();
+  function showTemperature() { 
+    $("#temperature").html(thermostat.temperature);
+    $("#temperature").css("color", thermostat.changeColor());  
   }
-  else {
-    thermostat.powerSaveOn();
-  };
-};
 
-document.getElementById("reset").onclick = function() {
-  thermostat.resetTemperature();
-  showTemperature();
-};
+  $("#up").click(function() {
+    thermostat.increase();
+    showTemperature();
+  });
 
-function showTemperature() { 
-  document.getElementById("temperature").innerHTML = (thermostat.temperature);
-  document.getElementById("temperature").style.color = thermostat.changeColor();
-    
-}
+  $("#down").click(function(){
+    thermostat.decrease();
+    showTemperature();
+  });
 
- 
+  $("#powersave").click(function() {
+    if (thermostat.powerSave === true) {
+      thermostat.powerSaveOff();
+    }
+    else {
+      thermostat.powerSaveOn();
+    };
+  });
+  
+  $("#reset").click(function() {
+    thermostat.resetTemperature();
+    showTemperature();
+  });
+
+});
+
 
