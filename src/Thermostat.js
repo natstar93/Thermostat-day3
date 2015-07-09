@@ -18,13 +18,7 @@ Thermostat.prototype.decrease = function () {
   };
 };
 
-Thermostat.prototype.powerSaveOff = function () {
-  this.powerSave = false;
-};
 
-Thermostat.prototype.powerSaveOn = function () {
-  this.powerSave = true;
-};
 
 Thermostat.prototype.powerSaveToggle = function () {
   this.powerSave = !this.powerSave;
@@ -37,7 +31,7 @@ Thermostat.prototype.resetTemperature = function () {
   this.temperature = 20;
 };
 
-Thermostat.prototype.changeColor = function () {
+Thermostat.prototype.mode = function () {
     if (this.temperature < 18) {
       return 'cool';
     }

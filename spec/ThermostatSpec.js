@@ -13,7 +13,7 @@ describe('Thermostat', function() {
   });
 
   describe('increases', function() {
-    it('the temperature by 1º', function() {
+    it('the temperature by 1ºC', function() {
       thermostat.increase();
       expect(thermostat.temperature).toEqual(21);
     });
@@ -40,12 +40,13 @@ describe('Thermostat', function() {
     });
 
     it('can be turned off', function() {
-      thermostat.powerSaveOff();
+      thermostat.powerSaveToggle();
       expect(thermostat.powerSave).toEqual(false);
     });
 
     it('can be turned on', function() {
-      thermostat.powerSaveOn();
+      thermostat.powerSave = false;
+      thermostat.powerSaveToggle();
       expect(thermostat.powerSave).toEqual(true);
     });
 
@@ -65,7 +66,7 @@ describe('Thermostat', function() {
     });
 
     it('off, the max temperature is 32ºC', function() {
-      thermostat.powerSaveOff();
+      thermostat.powerSave = false;
       thermostat.temperature = 32;
       thermostat.increase();
       expect(thermostat.temperature).toEqual(32);
@@ -74,12 +75,30 @@ describe('Thermostat', function() {
 
   describe('reset the temperature', function() {
     it('changes the temperature to 20', function() {
-      thermostat.increase();
+      thermostat.temperature = 22;
       thermostat.resetTemperature();
       expect(thermostat.temperature).toEqual(20);
     });
   });
 
-  // add colour range tests when time
+  describe('mode', function() {
+    it('outputs cool', function() {
+      thermostat.temperature = 15;
+      expect(thermostat.mode()).toEqual('cool');
+    });
+  });
+
+  describe('mode', function() {
+    it('outputs warm', function() {
+      expect(thermostat.mode()).toEqual('warm');
+    });
+  });
+
+  describe('mode', function() {
+    it('outputs hot', function() {
+      thermostat.temperature = 27;
+      expect(thermostat.mode()).toEqual('hot');
+    });
+  });
 });
 
