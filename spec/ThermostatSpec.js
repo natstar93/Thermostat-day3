@@ -29,7 +29,8 @@ describe('Thermostat', function() {
   describe('cannot decrease if', function() {
     it('temperature is <= 10ºC', function() {
       thermostat.temperature = 10;
-      expect(thermostat.decrease()).toEqual(10);
+      thermostat.decrease();
+      expect(thermostat.temperature).toEqual(10);
     });
   });
 
@@ -47,18 +48,27 @@ describe('Thermostat', function() {
       thermostat.powerSaveOn();
       expect(thermostat.powerSave).toEqual(true);
     });
+
+    it('changes temp to 25 if above 25 when turned on', function() {
+      thermostat.temperature = 26;
+      thermostat.powerSave = false;
+      thermostat.powerSaveToggle();
+      expect(thermostat.temperature).toEqual(25);
+    });
   });
 
   describe('when power save is', function() {
     it('on, the max temperature is 25ºC', function() {
       thermostat.temperature = 25;
-      expect(thermostat.increase()).toEqual(25);
+      thermostat.increase();
+      expect(thermostat.temperature).toEqual(25);
     });
 
     it('off, the max temperature is 32ºC', function() {
       thermostat.powerSaveOff();
       thermostat.temperature = 32;
-      expect(thermostat.increase()).toEqual(32);
+      thermostat.increase();
+      expect(thermostat.temperature).toEqual(32);
     });
   });
 
@@ -70,29 +80,6 @@ describe('Thermostat', function() {
     });
   });
 
-  // describe('it assigns a color-value', function() {
-  //   it('green when less than 18', function() {
-  //     thermostat.temperature = 17;
-  //     expect(thermostat.changeColor()).toEqual('green');
-  //   });
-
-  //     it('red when more than 25', function() {
-  //     thermostat.temperature = 26;
-  //     expect(thermostat.changeColor()).toEqual('red');
-  //   });
-  // });
-
-  describe('it assigns a color-value', function() {
-    function test_eight_times(temperature){
-      temperature;
-      it('green when temperature is less than 18',function(){
-        expect(thermostat.color).toEqual('green');
-      });
-    };
-
-    for(var i = 18; i < 10; i--) {
-      test_eight_times(thermostat.temperature = i);
-    }
-  });
-
+  // add colour range tests when time
 });
+
