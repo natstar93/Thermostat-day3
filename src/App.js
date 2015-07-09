@@ -35,7 +35,7 @@ $(document).ready(function() {
 
   function showTemperature() { 
     $("#temperature").html(thermostat.temperature + '&deg;C')
-    $("#temperature").removeClass('cool warm hot').addClass(thermostat.changeColor());  
+    $("#temperature").removeClass('cool warm hot').addClass(thermostat.mode());
   }
 
   $("#up").click(function() {

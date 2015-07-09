@@ -2,6 +2,11 @@
 body {
   background-color: #FFFFFF;
   background-repeat: none;
+  background: url('https://farm6.staticflickr.com/5321/8970114355_b8a347eb4b_b.jpg'), no-repeat, 150%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 img {
@@ -37,8 +42,12 @@ img {
   transition: font-size 1s;
 }
 
+#temperature:hover {
+  font-size: 6em;
+}
+
 .buttons {
-  padding: 10px;
+  /*padding: 10px;*/
 }
 
 .weather {
@@ -49,10 +58,13 @@ img {
   font-size: 1.3em;
 }
 
-#temperature:hover {
-  font-size: 6em;
-}
-
 .btn {
   width: 50px;
+  padding: 5px;
+  -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+  transition: width 1s;
+}
+
+.btn:hover {
+  width: 60px;
 }

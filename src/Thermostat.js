@@ -18,8 +18,6 @@ Thermostat.prototype.decrease = function () {
   };
 };
 
-
-
 Thermostat.prototype.powerSaveToggle = function () {
   this.powerSave = !this.powerSave;
   if (this.temperature > 25 && this.powerSave) {
@@ -40,5 +38,5 @@ Thermostat.prototype.mode = function () {
     }
     else {
       return 'hot';
-    };
+    }
 };
