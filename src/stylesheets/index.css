@@ -2,7 +2,7 @@
 body {
   background-color: #FFFFFF;
   background-repeat: none;
-  background: url('https://farm6.staticflickr.com/5321/8970114355_b8a347eb4b_b.jpg'), no-repeat, 150%;
+  background: url('../images/grass-bg.gif'), no-repeat, 150%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
