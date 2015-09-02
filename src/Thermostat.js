@@ -30,13 +30,13 @@ Thermostat.prototype.resetTemperature = function () {
 };
 
 Thermostat.prototype.mode = function () {
-    if (this.temperature < 18) {
-      return 'cool';
-    }
-    else if (this.temperature < 25) {
-      return 'warm';
-    }
-    else {
-      return 'hot';
-    }
+  if (this.temperature < 18) {
+    return 'cool';
+  }
+  else if (this.temperature < 25) {
+    return 'warm';
+  }
+  else {
+    return 'hot';
+  }
 };
