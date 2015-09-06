@@ -1,0 +1,24 @@
+{
+  "name": "thermostat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-coveralls": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "open SpecRunner.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natstar93/Thermostat-day3.git"
+  },
+  "author": "Natalie Akam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natstar93/Thermostat-day3/issues"
+  },
+  "homepage": "https://github.com/natstar93/Thermostat-day3#readme"
+}
